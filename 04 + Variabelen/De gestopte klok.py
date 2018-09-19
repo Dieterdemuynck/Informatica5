@@ -9,8 +9,16 @@ uur_4 = int(input("Uur thuis = "))
 minuten_4 = int(input("Minuten thuis = "))
 
 # Berekenen in minuten
-minuten_weg = minuten_4 - minuten_1 + ((uur_4 - uur_1) * 60)
+minuten_weg = (minuten_4 - minuten_1) + ((uur_4 - uur_1) * 60)
 minuten_bij_vriendin = minuten_3 - minuten_2 + ((uur_3 - uur_2) * 60)
+
+# Getallen positief houden
+minuten_weg += 1440
+minuten_bij_vriendin += 1440
+minuten_weg %= 1440
+minuten_bij_vriendin %= 1440
+
+# Verder berekenen in minuten
 totaal_minuten_onderweg = (minuten_weg - minuten_bij_vriendin) // 2
 
 # Optellen en Opsplitsen
