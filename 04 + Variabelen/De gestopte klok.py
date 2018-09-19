@@ -1,24 +1,25 @@
 # inputs
-vertrek_uur_naar_vriendin = int(input("Uur naar vriendin = "))
-vertrek_minuten_naar_vriendin = int(input("Minuten naar vriendin = "))
-aankomst_uur_naar_vriendin = int(input("Uur bij vriendin = "))
-aankomst_minuten_naar_vriendin = int(input("Minuten bij vriendin = "))
-vertrek_uur_naar_huis = int(input("Uur naar huis = "))
-vertrek_minuten_naar_huis = int(input("Minuten naar huis = "))
-aankomst_uur_naar_huis = int(input("Uur thuis = "))
-aankomst_minuten_naar_huis = int(input("Minuten thuis = "))
+uur_1 = int(input("Uur naar vriendin = "))
+minuten_1 = int(input("Minuten naar vriendin = "))
+uur_2 = int(input("Uur bij vriendin = "))
+minuten_2 = int(input("Minuten bij vriendin = "))
+uur_3 = int(input("Uur naar huis = "))
+minuten_3 = int(input("Minuten naar huis = "))
+uur_4 = int(input("Uur thuis = "))
+minuten_4 = int(input("Minuten thuis = "))
 
 # Berekenen in minuten
-minuten_weg = aankomst_minuten_naar_huis - vertrek_minuten_naar_vriendin + ((aankomst_uur_naar_huis - vertrek_uur_naar_vriendin) * 60)
-minuten_bij_vriendin = vertrek_minuten_naar_huis - aankomst_minuten_naar_vriendin + ((vertrek_uur_naar_huis - aankomst_uur_naar_vriendin) * 60)
+minuten_weg = minuten_4 - minuten_1 + ((uur_4 - uur_1) * 60)
+minuten_bij_vriendin = minuten_3 - minuten_2 + ((uur_3 - uur_2) * 60)
 totaal_minuten_onderweg = (minuten_weg - minuten_bij_vriendin) // 2
 
 # Optellen en Opsplitsen
-minuten_verkeerd = int(aankomst_uur_naar_huis * 60 + aankomst_minuten_naar_huis)
-minuten_juist = int(minuten_verkeerd + totaal_minuten_onderweg)
+minuten_voor_vetrek = int(uur_3 * 60 + minuten_3)
+minuten_juist = int(minuten_voor_vetrek + totaal_minuten_onderweg)
 
 uur = minuten_juist // 60
 minuten = minuten_juist % 60
+uur %= 24
 
 # Optellen en Printen
 print(str(uur))
