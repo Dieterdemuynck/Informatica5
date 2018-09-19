@@ -12,3 +12,4 @@ print('discriminant = ', discriminant)
 # ------------------------------------
 
 print('discriminant =', float(input("b: ")) ** 2 - (4 * float(input("a: ")) * float(input("c: "))))
+# Onduidelijk en moeilijk: niet doen dus.
