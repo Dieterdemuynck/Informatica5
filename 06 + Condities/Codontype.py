@@ -9,4 +9,4 @@ elif codon == "UAG" or codon == "UGA" or codon == "UAA":
 else:
     output = "gewoon"
 
-print("Het codon", codon, "is een", output, "codon.")
+print("Het codon", codon, "is een", output, "codon."
