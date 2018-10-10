@@ -12,6 +12,8 @@ if bmi_1 == bmi:
     naam = naam_1
 else:
     naam = naam_2
+if gewicht_1 == gewicht_2:
+    naam = naam_2
 
 if bmi >= 30:
     message = naam + " heeft het hoogste BMI ({:.2f}) en is obees.".format(bmi)
