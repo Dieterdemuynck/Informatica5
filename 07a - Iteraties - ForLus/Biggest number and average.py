@@ -9,6 +9,6 @@ for aantal in range(2, (aantal + 1)):
     maximum = max(getal, maximum)
 
     som += getal
-
+# Dieter's possesion.
 gemiddelde = round((som / aantal), 2)
 print("Het grootste getal is {} en het gemiddelde is {}".format(maximum, gemiddelde))
