@@ -1,24 +1,23 @@
 def is_letter(n):
-    if n in "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN":
+    if ord(n) in range(65, 91) or ord(n) in range(97, 123):
         return True
-    else:
-        return False
+    return False
+
 
 def roteer_letter(letter, rotatie):
-    if is_letter(letter):
+    if is_letter(letter) and ord(letter) in range(65, 91):
         letter = chr(ord(letter) + rotatie)
-        if not is_letter(letter):
+        if ord(letter) > 90:
+            letter = chr(ord(letter) - 26)
+    elif is_letter(letter) and ord(letter) in range(97, 123):
+        letter = chr(ord(letter) + rotatie)
+        if ord(letter) > 122:
             letter = chr(ord(letter) - 26)
     return letter
+
 
 def versleutel(tekst, rotatie):
     string = ""
     for letter in tekst:
         string += roteer_letter(letter, rotatie)
     return string
-
-print(is_letter("3"))
-print(is_letter("A"))
-print(roteer_letter("Z", 13))
-print(roteer_letter("a", 2))
-print(versleutel("zZALLO, HOE gaat HET?", 12))
