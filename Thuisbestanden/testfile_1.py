@@ -17,19 +17,24 @@
 
 from random import randint, random
 
+line = "--------------------------------------------------------------------------------------------------------------"
 ### CHARACTER ###
 character = input("What class would you like to be? Choose between: Warrior, Mage, Rogue:  ")
 
 character_decided = False
 while not character_decided:
     if character == "Mage" or character == "mage":
-
+        current_char = "Mage"
         character_decided = True
     elif character == "Warrior" or character == "warrior":
-
+        current_char = "Warrior"
         character_decided = True
     elif character == "Rogue" or character == "rogue":
-
+        current_char = "Rogue"
         character_decided = True
     else:
         character = input("That was not a valid class. Please choose between Mage, Warrior or Rogue:  ")
+
+print("\nYou chose '{}'. \n{}\n".format(current_char, line))
+
+stats_answer = input("Would you like to see your current statistics? (Yes/No)  ")
