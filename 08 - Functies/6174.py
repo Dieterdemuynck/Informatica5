@@ -33,13 +33,15 @@ def verschil(cijfer_aflopend, cijfer_oplopend):
 
 
 def kaprekar(getal):
+    string = ""
     while getal != 6174:
         opgesplitst1, opgesplitst2, opgesplitst3, opgesplitst4 = splits(getal)
         cijfer1, cijfer2, cijfer3, cijfer4 = oplopende_cijfers(opgesplitst1, opgesplitst2, opgesplitst3, opgesplitst4)
         cijfer_oplopend, cijfer_aflopend = op_af_getallen(cijfer1, cijfer2, cijfer3, cijfer4)
-        getal = int(verschil(cijfer_oplopend, cijfer_aflopend))
+        getal = int(verschil(cijfer_aflopend, cijfer_oplopend))
+        string += "\n{} - {} = {}".format(cijfer_aflopend, cijfer_oplopend, getal)
 
-    return "{} - {} = {}".format(cijfer_aflopend, cijfer_oplopend, getal)
+    return string
 
 
 print(kaprekar(1234))
