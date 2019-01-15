@@ -1,11 +1,15 @@
-from math import sin, cos
+from math import sin, cos, radians
 getal = input("Geef een getal: ")
 
+x_coor = 0
+y_coor = 0
 for number in getal:
-    if number == ".":
-        None
-    else:
-        x_coor = sin(int(number) * 36)
-        y_coor = cos(int(number) * 36)
+    if number != ".":
+        y_walk = sin(radians(int(number) * -36 + 90))
+        x_walk = cos(radians(int(number) * -36 + 90))
 
-print("Number {} walks to position ({}, {}).".format(getal, x_coor, y_coor))
+    x_coor += x_walk
+    y_coor += y_walk
+
+
+print("Number {} walks to position ({:.2f}, {:.2f}).".format(getal, x_coor, y_coor))
