@@ -1,8 +1,16 @@
 def verlaat_ploeg(speler, ploeg, inschrijvingen):
-    if speler in inschrijvingen[ploeg]:
-        inschrijvingen[ploeg].pop(inschrijvingen[ploeg].index([speler]))
+    inschrijvingen[ploeg].remove(speler)
+
+    if inschrijvingen[ploeg] == []:
+        inschrijvingen.pop(ploeg)
 
     return inschrijvingen
 
 
-print(verlaat_ploeg('Tom','Sinbox',{'Sinbox': ['An', 'Tom', 'Griet'], 'Levies': ['Fien'], 'Quist Het': ['Jens', 'Lies', 'Jesse'], 'verKWISting': ['Renzo', 'Jan', 'Annelies']}))
+def vervoegt_ploeg(speler, ploeg, inschrijvingen):
+    if ploeg in inschrijvingen:
+        inschrijvingen[ploeg].append(speler)
+    else:
+        inschrijvingen[ploeg] = [speler]
+
+    return inschrijvingen
