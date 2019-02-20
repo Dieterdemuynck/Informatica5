@@ -8,7 +8,7 @@ def fruitstuk_toevoegen(fruitmand, fruitstuk):
         elif len(fruitmand[i]) > len(fruitstuk) and not fruitstuk_toegevoegd:
             fruitmand.insert(i, fruitstuk)
             fruitstuk_toegevoegd = True
-        elif i == len(fruitmand) - 1:
+        elif i == len(fruitmand) - 1 and not fruitstuk_toegevoegd:
             fruitmand.append(fruitstuk)
 
     return fruitmand
@@ -21,5 +21,3 @@ def maak_fruitmand(fruit):
         fruitmand = fruitstuk_toevoegen(fruitmand, fruit[i])
 
     return fruitmand
-
-print(maak_fruitmand(['banaan', 'aardbei', 'kiwi', 'peer', 'appel', 'bes', 'sinaasappel', 'framboos']))
