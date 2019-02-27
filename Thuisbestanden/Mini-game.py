@@ -1,1 +1,3 @@
-# Now, what do it do?
+# Now, what do I do?
+helloset = set("hello world")
+print(helloset)
