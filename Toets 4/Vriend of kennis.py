@@ -47,8 +47,3 @@ def meest_gekende(bekendheden):
             bekendst.append(persoon)
 
     return bekendst
-
-
-kennissen = {'Eva': {'Margaux', 'Arno'}, 'Arno': {'Eva', 'Jens'}, 'Jens': {'Margaux', 'Eva'}, 'Margaux': set()}
-
-print(unieke_kennissen(kennissen, 'Eva', 'Margaux'))
