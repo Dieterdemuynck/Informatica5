@@ -12,15 +12,11 @@ def vriend_of_kennis(kennissen, persoon_a, persoon_b):
 
 
 def unieke_kennissen(kennissen, persoon_a, persoon_b):
-    uniek = set()
+    uniek = kennissen[persoon_a].difference(kennissen[persoon_b])
+    uniek.update(kennissen[persoon_b].difference(kennissen[persoon_a]))
 
-    for kennis in kennissen[persoon_a]:
-        if kennis not in kennissen[persoon_b] and kennis != persoon_b:
-            uniek.add(kennis)
-
-    for kennis in kennissen[persoon_b]:
-        if kennis not in kennissen[persoon_a] and kennis != persoon_a:
-            uniek.add(kennis)
+    uniek.discard(persoon_a)
+    uniek.discard(persoon_b)
 
     return uniek
 
@@ -51,3 +47,8 @@ def meest_gekende(bekendheden):
             bekendst.append(persoon)
 
     return bekendst
+
+
+kennissen = {'Eva': {'Margaux', 'Arno'}, 'Arno': {'Eva', 'Jens'}, 'Jens': {'Margaux', 'Eva'}, 'Margaux': set()}
+
+print(unieke_kennissen(kennissen, 'Eva', 'Margaux'))
