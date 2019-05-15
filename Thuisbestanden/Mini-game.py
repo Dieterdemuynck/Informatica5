@@ -7,15 +7,13 @@ if cheats_answer.lower() == "yes" or cheats_answer.lower() == "y":
     password = input("Enter the cheatcode: \n")
 
     if password.lower() == "hayasaka ftw":
-        print("The number you're looking for is", number, ", you majestic being.")
+        print("The number you're looking for is", number, ", your majesty")
     elif password.lower() == "raphtalia":
         range_1 = number - randint(0, 20)
         range_2 = number + randint(0, 20)
         print("Your number is somewhere between", range_1, "and", range_2, ".")
     else:
         print("that wasn't a correct cheatcode. Try again next game.")
-else:
-    print("Then we'll start immediatly!")
 
 
 guess = int(input("Guess the number: \n"))
