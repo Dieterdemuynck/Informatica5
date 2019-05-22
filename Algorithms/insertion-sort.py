@@ -1,5 +1,6 @@
 from random import randint
 from time import time
+import matplotlib.pyplot as plt
 
 
 def genereer_rij(aantal):
@@ -16,23 +17,42 @@ def insertion_sort(a):
         i = j - 1
         while i >= 0 and a[i] > key:
             a[i + 1] = a[i]
-            i = i - 1
+            i -= 1
         a[i + 1] = key
 
     return a
 
+n, t_insertion, t_python = [], [], []
 
-rij_1 = genereer_rij(25000)
-rij_2 = rij_1.copy()
+i = 10
 
-# insertion sort
-start = time()
-insertion_sort(rij_1)
-stop = time()
-print(stop - start)
+while i < 1000:
 
-# python sort
-start = time()
-rij_2.sort()
-stop = time()
-print(stop - start)
+    rij_1 = genereer_rij(i)
+    rij_2 = rij_1.copy()
+
+    # insertion sort
+    start = time()
+    insertion_sort(rij_1)
+    stop = time()
+
+    t_insertion.append(stop - start)
+
+    # python sort
+    start = time()
+    rij_2.sort()
+    stop = time()
+
+    t_python.append(stop - start)
+
+    n.append(i)
+    i += 50
+
+plt.plot(n, t_insertion, "-ro")
+plt.plot(n, t_python, "-bo")
+plt.xlabel("N")
+plt.ylabel("t")
+plt.gcf().legend(("Insertion sort", "Python sort"))
+plt.gcf().canvas.set_window_title("Dieter Demuynck")
+plt.title("Time measurements")
+plt.show()
