@@ -33,6 +33,9 @@ def binary_search(lijst, low, high, num):
             return binary_search(lijst, mid + 1, high, num)
 
 
+
+
+
 n, t_bs, t_ls = [], [], []
 i = 10
 while i < 30000:
